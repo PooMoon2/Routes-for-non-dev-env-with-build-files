@@ -1,6 +1,8 @@
 const express = require('express');
 const app = express();
 const fs = require('fs');
+const path = require('path');
+
 // for any other request, serve HTML in DIT environment (cloud env)
 exports.build = function(NODE_ENV, directoryName, filePath){
   if (NODE_ENV === 'DIT') {
