@@ -2,9 +2,10 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const path = require('path');
+const NODE_ENV = process.env.NODE_ENV;
 
 // for any other request, serve HTML in DIT environment (cloud env)
-exports.build = function(NODE_ENV, directoryName, filePath){
+exports.build = function(directoryName, filePath){
   if (NODE_ENV === 'DIT') {
     const indexHTMLContent = fs.readFileSync(
       path.join(directoryName + filePath),
